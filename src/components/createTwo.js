@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
 import { gql, useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 const INSERT_SCHEDULE = gql`
-	mutation InsertSchedule($timeFrom: String, $mer1: String, $timeto: String, $mer2: String) {
-		insert_schedules(objects: { timeFrom: $timeFrom, mer1: $mer1, timeto: $timeto, mer2: $mer2 }) {
+	mutation InsertSchedule(
+		$timeFrom: String
+		$mer1: String
+		$timeto: String
+		$mer2: String
+		$title: String
+		$date: String
+		$participants: Int
+	) {
+		insert_schedules(
+			objects: {
+				timeFrom: $timeFrom
+				mer1: $mer1
+				timeto: $timeto
+				mer2: $mer2
+				title: $title
+				date: $date
+				participants: $participants
+			}
+		) {
 			returning {
 				id
 			}
@@ -38,7 +57,15 @@ class CreateScheduleOne extends Component {
 			data['participants'] = Math.floor(Math.random() * 100);
 
 			const { dataDB } = await insertSchedule({
-				variables: { timeFrom: data.timefrom, mer1: data.meridian1, timeto: data.timeTo, mer2: data.meridian2 }
+				variables: {
+					timeFrom: data.timefrom,
+					mer1: data.meridian1,
+					timeto: data.timeTo,
+					mer2: data.meridian2,
+					title: data.title,
+					date: data.date,
+					participants: data.participants
+				}
 			});
 
 			console.log(dataDB);
@@ -81,7 +108,9 @@ class CreateScheduleOne extends Component {
 					onChange={(event) => this.setState({ meridianTo: event.target.value })}
 					required
 				/>
-				<button onClick={onSubmit}>Go!</button>
+				<button onClick={onSubmit}>
+					<Link to="/">Go!</Link>
+				</button>
 			</div>
 		);
 	}

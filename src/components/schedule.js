@@ -8,7 +8,9 @@ function Schedule(props) {
 			<div className="right">
 				<div className="title">{props.data.title}</div>
 				<div className="info">
-					<div className="time">{props.data.startTime + ' to ' + props.data.endTime}</div>
+					<div className="time">
+						{props.data.timeFrom} {props.data.mer1} & {props.data.timeto} {props.data.mer2}
+					</div>
 					<div className="paticipants">{props.data.participants} participants</div>
 				</div>
 			</div>

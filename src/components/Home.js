@@ -13,6 +13,9 @@ const GET_SCHEDULES = gql`
 			mer1
 			timeto
 			mer2
+			title
+			date
+			participants
 		}
 	}
 `;
