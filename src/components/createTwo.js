@@ -39,11 +39,11 @@ function withMyHook(Component) {
 
 class CreateScheduleOne extends Component {
 	state = {
-		hrfrom: 4,
-		minfrom: 4,
+		hrfrom: null,
+		minfrom: null,
 		meridianFrom: '',
-		hrto: 4,
-		minto: 4,
+		hrto: null,
+		minto: null,
 		meridianTo: ''
 	};
 	render() {
@@ -72,45 +72,76 @@ class CreateScheduleOne extends Component {
 		};
 		return (
 			<div>
-				<input
-					type="number"
-					value={this.state.hrfrom}
-					onChange={(event) => this.setState({ hrfrom: event.target.value })}
-					required
-				/>
-				<input
-					type="number"
-					value={this.state.minfrom}
-					onChange={(event) => this.setState({ minfrom: event.target.value })}
-					required
-				/>
-				<input
-					type="text"
-					value={this.state.meridianFrom}
-					onChange={(event) => this.setState({ meridianFrom: event.target.value })}
-					required
-				/>
-				<input
-					type="number"
-					value={this.state.hrto}
-					onChange={(event) => this.setState({ hrto: event.target.value })}
-					required
-				/>
-				<input
-					type="number"
-					value={this.state.minto}
-					onChange={(event) => this.setState({ minto: event.target.value })}
-					required
-				/>
-				<input
-					type="text"
-					value={this.state.meridianTo}
-					onChange={(event) => this.setState({ meridianTo: event.target.value })}
-					required
-				/>
-				<button onClick={onSubmit}>
-					<Link to="/">Go!</Link>
-				</button>
+				<div className="header">New Schedule - Step 2</div>
+				<div className="create-button">
+					<button onClick={onSubmit}>
+						<Link to="/">Create</Link>
+					</button>
+				</div>
+				<div className="main">
+					<p>Start Time</p>
+					<label className="label" htmlFor="hour">
+						Hr
+					</label>
+					<input
+						name="hour"
+						type="text"
+						value={this.state.hrfrom}
+						onChange={(event) => this.setState({ hrfrom: event.target.value })}
+						required
+					/>
+					<label className="label" htmlFor="min">
+						Min
+					</label>
+					<input
+						name="min"
+						type="text"
+						value={this.state.minfrom}
+						onChange={(event) => this.setState({ minfrom: event.target.value })}
+						required
+					/>
+					<label className="label" htmlFor="mer-1">
+						AM/PM
+					</label>
+					<input
+						name="mer-1"
+						type="text"
+						value={this.state.meridianFrom}
+						onChange={(event) => this.setState({ meridianFrom: event.target.value })}
+						required
+					/>
+					<p>End Time</p>
+					<label className="label" htmlFor="hour-1">
+						Hr
+					</label>
+					<input
+						name="hour-1"
+						type="text"
+						value={this.state.hrto}
+						onChange={(event) => this.setState({ hrto: event.target.value })}
+						required
+					/>
+					<label className="label" htmlFor="min-1">
+						Min
+					</label>
+					<input
+						name="min-1"
+						type="text"
+						value={this.state.minto}
+						onChange={(event) => this.setState({ minto: event.target.value })}
+						required
+					/>
+					<label className="label" htmlFor="mer-2">
+						AM/PM
+					</label>
+					<input
+						name="mer-2"
+						type="text"
+						value={this.state.meridianTo}
+						onChange={(event) => this.setState({ meridianTo: event.target.value })}
+						required
+					/>
+				</div>
 			</div>
 		);
 	}

@@ -14,16 +14,19 @@ function Home() {
 	}
 	return (
 		<div>
-			<button>
-				<Link
-					to={{
-						pathname: '/step2',
-						data: Clickme()
-					}}
-				>
-					First Page
-				</Link>
-			</button>
+			<div className="header">New Schedule - Step 1</div>
+			<div className="create-button">
+				<button>
+					<Link
+						to={{
+							pathname: '/step2',
+							data: Clickme()
+						}}
+					>
+						Next
+					</Link>
+				</button>
+			</div>
 			<div className="main">
 				<div className="text-field">
 					<label className="label" htmlFor="title">
