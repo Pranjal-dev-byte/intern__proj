@@ -7,6 +7,8 @@
     flex-direction: column;
 }
 .field{
+      border: 1px solid #b9b9b9;
+
     width: 55px;
     margin: 0 15px 15px 0;
     padding: 15px 5px;

@@ -3,6 +3,8 @@ p{
     margin: 3px 0;
 }
 .field__title{
+      border: 1px solid #b9b9b9;
+
     width: 235px;
     margin-bottom: 5px;
     padding: 5px 5px;
