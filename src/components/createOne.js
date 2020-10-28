@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import './createOne.css';
+
 function Home() {
 	const [ title, setTitle ] = useState('');
 	const [ day, setDay ] = useState('');
@@ -28,20 +30,31 @@ function Home() {
 				</button>
 			</div>
 			<div className="main">
-				<div className="text-field">
-					<label className="label" htmlFor="title">
-						Title
-					</label>
-					<input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
+				<div className="main__column">
+					<div className="start__field">
+						<div className="start__field--wrap">
+							<label className="label" htmlFor="title">
+								Title
+							</label>
+							<br />
+							<input
+								className="field__title"
+								type="text"
+								name="title"
+								onChange={(e) => setTitle(e.target.value)}
+							/>
+						</div>
+					</div>
 				</div>
-				<div className="date">
-					<div className="label">Date</div>
-					<div className="date-fields">
-						<div className="date-field">
+				<div className="main__column">
+					<p>Date</p>
+					<div className="start__field">
+						<div className="start__field--wrap">
 							<label className="label" htmlFor="day">
 								Day
 							</label>
 							<input
+								className="field"
 								type="text"
 								name="day"
 								maxLength="2"
@@ -49,11 +62,12 @@ function Home() {
 								onChange={(e) => setDay(e.target.value)}
 							/>
 						</div>
-						<div className="date-field">
+						<div className="start__field--wrap">
 							<label className="label" htmlFor="month">
 								Month
 							</label>
 							<input
+								className="field"
 								type="text"
 								name="month"
 								maxLength="2"
@@ -61,11 +75,12 @@ function Home() {
 								onChange={(e) => setMonth(e.target.value)}
 							/>
 						</div>
-						<div className="date-field">
+						<div className="start__field--wrap">
 							<label className="label" htmlFor="year">
 								Year
 							</label>
 							<input
+								className="field"
 								type="text"
 								name="year"
 								maxLength="4"

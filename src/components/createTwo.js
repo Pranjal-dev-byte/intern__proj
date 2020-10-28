@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { gql, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
+import './createTwo.css';
+
 const INSERT_SCHEDULE = gql`
 	mutation InsertSchedule(
 		$timeFrom: String
@@ -79,68 +81,94 @@ class CreateScheduleOne extends Component {
 					</button>
 				</div>
 				<div className="main">
-					<p>Start Time</p>
-					<label className="label" htmlFor="hour">
-						Hr
-					</label>
-					<input
-						name="hour"
-						type="text"
-						value={this.state.hrfrom}
-						onChange={(event) => this.setState({ hrfrom: event.target.value })}
-						required
-					/>
-					<label className="label" htmlFor="min">
-						Min
-					</label>
-					<input
-						name="min"
-						type="text"
-						value={this.state.minfrom}
-						onChange={(event) => this.setState({ minfrom: event.target.value })}
-						required
-					/>
-					<label className="label" htmlFor="mer-1">
-						AM/PM
-					</label>
-					<input
-						name="mer-1"
-						type="text"
-						value={this.state.meridianFrom}
-						onChange={(event) => this.setState({ meridianFrom: event.target.value })}
-						required
-					/>
-					<p>End Time</p>
-					<label className="label" htmlFor="hour-1">
-						Hr
-					</label>
-					<input
-						name="hour-1"
-						type="text"
-						value={this.state.hrto}
-						onChange={(event) => this.setState({ hrto: event.target.value })}
-						required
-					/>
-					<label className="label" htmlFor="min-1">
-						Min
-					</label>
-					<input
-						name="min-1"
-						type="text"
-						value={this.state.minto}
-						onChange={(event) => this.setState({ minto: event.target.value })}
-						required
-					/>
-					<label className="label" htmlFor="mer-2">
-						AM/PM
-					</label>
-					<input
-						name="mer-2"
-						type="text"
-						value={this.state.meridianTo}
-						onChange={(event) => this.setState({ meridianTo: event.target.value })}
-						required
-					/>
+					<div className="main__column">
+						<p>Start Time</p>
+						<div className="start__field">
+							<div className="start__field--wrap">
+								<label className="label" htmlFor="hour">
+									Hr
+								</label>
+								<input
+									className="field"
+									name="hour"
+									type="text"
+									value={this.state.hrfrom}
+									onChange={(event) => this.setState({ hrfrom: event.target.value })}
+									required
+								/>
+							</div>
+							<div className="start__field--wrap">
+								<label className="label" htmlFor="min">
+									Min
+								</label>
+								<input
+									className="field"
+									name="min"
+									type="text"
+									value={this.state.minfrom}
+									onChange={(event) => this.setState({ minfrom: event.target.value })}
+									required
+								/>
+							</div>
+							<div className="start__field--wrap">
+								<label className="label" htmlFor="mer-1">
+									AM/PM
+								</label>
+								<input
+									className="field"
+									name="mer-1"
+									type="text"
+									value={this.state.meridianFrom}
+									onChange={(event) => this.setState({ meridianFrom: event.target.value })}
+									required
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="main__column">
+						<p>End Time</p>
+						<div className="start__field">
+							<div className="start__field--wrap">
+								<label className="label" htmlFor="hour-1">
+									Hr
+								</label>
+								<input
+									className="field"
+									name="hour-1"
+									type="text"
+									value={this.state.hrto}
+									onChange={(event) => this.setState({ hrto: event.target.value })}
+									required
+								/>
+							</div>
+							<div className="start__field--wrap">
+								<label className="label" htmlFor="min-1">
+									Min
+								</label>
+								<input
+									className="field"
+									name="min-1"
+									type="text"
+									value={this.state.minto}
+									onChange={(event) => this.setState({ minto: event.target.value })}
+									required
+								/>
+							</div>
+							<div className="start__field--wrap">
+								<label className="label" htmlFor="mer-2">
+									AM/PM
+								</label>
+								<input
+									className="field"
+									name="mer-2"
+									type="text"
+									value={this.state.meridianTo}
+									onChange={(event) => this.setState({ meridianTo: event.target.value })}
+									required
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
