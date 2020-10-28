@@ -92,6 +92,8 @@ class CreateScheduleOne extends Component {
 									className="field"
 									name="hour"
 									type="text"
+									maxLength="2"
+									size="2"
 									value={this.state.hrfrom}
 									onChange={(event) => this.setState({ hrfrom: event.target.value })}
 									required
@@ -105,6 +107,8 @@ class CreateScheduleOne extends Component {
 									className="field"
 									name="min"
 									type="text"
+									maxLength="2"
+									size="2"
 									value={this.state.minfrom}
 									onChange={(event) => this.setState({ minfrom: event.target.value })}
 									required
@@ -118,6 +122,8 @@ class CreateScheduleOne extends Component {
 									className="field"
 									name="mer-1"
 									type="text"
+									maxLength="2"
+									size="2"
 									value={this.state.meridianFrom}
 									onChange={(event) => this.setState({ meridianFrom: event.target.value })}
 									required
@@ -136,6 +142,8 @@ class CreateScheduleOne extends Component {
 									className="field"
 									name="hour-1"
 									type="text"
+									maxLength="2"
+									size="2"
 									value={this.state.hrto}
 									onChange={(event) => this.setState({ hrto: event.target.value })}
 									required
@@ -149,6 +157,8 @@ class CreateScheduleOne extends Component {
 									className="field"
 									name="min-1"
 									type="text"
+									maxLength="2"
+									size="2"
 									value={this.state.minto}
 									onChange={(event) => this.setState({ minto: event.target.value })}
 									required
@@ -162,6 +172,8 @@ class CreateScheduleOne extends Component {
 									className="field"
 									name="mer-2"
 									type="text"
+									maxLength="2"
+									size="2"
 									value={this.state.meridianTo}
 									onChange={(event) => this.setState({ meridianTo: event.target.value })}
 									required

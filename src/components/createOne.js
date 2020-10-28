@@ -42,6 +42,7 @@ function Home() {
 								type="text"
 								name="title"
 								onChange={(e) => setTitle(e.target.value)}
+								required
 							/>
 						</div>
 					</div>
@@ -60,6 +61,7 @@ function Home() {
 								maxLength="2"
 								size="2"
 								onChange={(e) => setDay(e.target.value)}
+								required
 							/>
 						</div>
 						<div className="start__field--wrap">
@@ -70,9 +72,10 @@ function Home() {
 								className="field"
 								type="text"
 								name="month"
-								maxLength="2"
-								size="2"
+								maxLength="3"
+								size="3"
 								onChange={(e) => setMonth(e.target.value)}
+								required
 							/>
 						</div>
 						<div className="start__field--wrap">
@@ -86,6 +89,7 @@ function Home() {
 								maxLength="4"
 								size="4"
 								onChange={(e) => setYear(e.target.value)}
+								required
 							/>
 						</div>
 					</div>
